@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 const xml2js = require('xml2js');
 const app = express();
 
-const API_KEY = 'YOUR_API_KEY_HERE';
-const CUSTOM_SEARCH_ENGINE_ID = 'YOUR_CSE_ID_HERE';
+API_KEY = 'AIzaSyDsOD6t9jlJvnQ9S9ovXjI9ZgD7gEiB_Vs';
+var CUSTOM_SEARCH_ENGINE_ID = 'e298e2926913441fc';
 
 app.get('/getArticleText', (req, res) => {
   const companyName = req.query.companyName;
