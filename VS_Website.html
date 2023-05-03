@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get Article Text</title>
+</head>
+<form id="form1" action="https://github.com/ewingtom/vulcan_stare/blob/64c469b884d603b784ed9e0abaf2502756d2a3b7/server.js" onsubmit="handleSubmit()">
+  <label for="companyName">Company Name:</label>
+  <input type="text" id="companyName" name="companyName">
+  <button type="submit">Get Article Text</button>
+</form>
+  <script>
+    const API_KEY = 'AIzaSyDsOD6t9jlJvnQ9S9ovXjI9ZgD7gEiB_Vs';
+    const CUSTOM_SEARCH_ENGINE_ID = 'e298e2926913441fc';
+
+    const button = document.getElementById("get-article-text");
+    button.addEventListener("click", function() {
+      const companyName = document.getElementById("company-name").value;
+      fetch(`/getArticleText?companyName=${encodeURIComponent(companyName)}`)
+        .then(response => response.text())
+        .then(articleText => {
+          const articleTextElement = document.getElementById("article-text");
+          articleTextElement.textContent = articleText;
+        })
+        .catch(error => console.error(error));
+    });
+  </script>
+</body>
+</html>
