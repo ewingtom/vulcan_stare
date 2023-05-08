@@ -1,4 +1,5 @@
 const express = require('express');
+//const fetch = import('node-fetch').default; // use dynamic import to load default export
 const fetch = require('node-fetch');
 const xml2js = require('xml2js');
 const app = express();
@@ -38,3 +39,6 @@ app.get('/getArticleText', (req, res) => {
       } else {
         res.send(null);
       }
+    })
+    .catch(error => console.error(error));
+});
